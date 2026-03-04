@@ -46,42 +46,46 @@
             <a href="/beranda" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Kembali</a>
         </div>
 
-        <section class="detail-container">
-            <div class="detail-image glass fade-in">
-                <i class="fa-solid fa-laptop fa-8x" style="color: var(--accent-color);"></i>
+       <section class="detail-container">
+            <div id="loading-detail" style="width: 100%; text-align: center; padding: 50px;">
+                <i class="fa-solid fa-spinner fa-spin fa-3x" style="color: var(--accent-color);"></i>
+                <p>Mencari data produk...</p>
             </div>
 
-            <div class="detail-info glass fade-in" style="animation-delay: 0.2s;">
-                <div class="seller-badge"><i class="fa-solid fa-check-circle"></i> Official Store</div>
-                <h1 class="detail-title">Laptop Pro 2026 Edisi Spesial</h1>
-                
-                <div class="detail-meta">
-                    <span class="rating"><i class="fa-solid fa-star"></i> 4.9</span>
-                    <span class="sold">1.2rb Terjual</span>
-                    <span class="stock">Stok: 45</span>
-                </div>
-                
-                <h2 class="detail-price">Rp 15.000.000</h2>
-                
-                <div class="detail-description">
-                    <h3>Deskripsi Produk</h3>
-                    <p>Laptop generasi terbaru dengan prosesor super cepat, layar OLED 4K, dan baterai tahan 24 jam. Cocok untuk produktivitas tingkat tinggi dan gaming berat. Garansi resmi 2 tahun.</p>
-                </div>
-
-                <div class="seller-card glass">
-                    <i class="fa-solid fa-store fa-2x" style="color: #8b5cf6;"></i>
-                    <div>
-                        <h4>Jagoan Komputer</h4>
-                        <p>Jakarta Selatan | Aktif 5 menit lalu</p>
+            <div id="content-detail" style="display: none; width: 100%; gap: 30px;">
+                <div class="detail-image glass fade-in" id="detail-image" style="overflow: hidden; display: flex; align-items: center; justify-content: center; background: #000;">
                     </div>
-                    <button class="glass-btn" style="padding: 8px 15px; width: auto;">Kunjungi</button>
-                </div>
 
-                <div class="action-buttons">
-                    <button class="glass-btn"><i class="fa-solid fa-message"></i> Chat</button>
-                    <button class="glass-btn primary" onclick="showToast('<b>Laptop Pro 2026</b> masuk keranjang!')">
-                        <i class="fa-solid fa-cart-plus"></i> Masukkan Keranjang
-                    </button>
+                <div class="detail-info glass fade-in" style="animation-delay: 0.2s;">
+                    <div class="seller-badge"><i class="fa-solid fa-check-circle"></i> Digital Terverifikasi</div>
+                    <p id="detail-kategori" style="color: var(--accent-color); font-weight: bold; margin-bottom: 5px; font-size: 0.9rem;"></p>
+                    <h1 class="detail-title" id="detail-title">Memuat...</h1>
+                    
+                    <div class="detail-meta">
+                        <span class="rating"><i class="fa-solid fa-star"></i> 5.0</span>
+                        <span class="stock" id="detail-stock">Stok: ...</span>
+                    </div>
+                    
+                    <h2 class="detail-price" id="detail-price">Rp 0</h2>
+                    
+                    <div class="detail-description">
+                        <h3>Deskripsi Produk</h3>
+                        <p id="detail-desc" style="white-space: pre-wrap; line-height: 1.6;">Memuat deskripsi...</p>
+                    </div>
+
+                    <div class="seller-card glass">
+                        <i class="fa-solid fa-store fa-2x" style="color: #8b5cf6;"></i>
+                        <div>
+                            <h4 id="detail-seller">Memuat Penjual...</h4>
+                            <p><i class="fa-solid fa-circle-check" style="color: #10b981;"></i> Penjual Pro</p>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="glass-btn primary" id="btn-beli-sekarang" style="width: 100%; font-size: 1.1rem; padding: 15px;">
+                            <i class="fa-solid fa-cart-plus"></i> Masukkan Keranjang
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
