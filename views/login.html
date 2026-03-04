@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masuk | JualBeli.app</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="auth-page">
+    
+    <div class="theme-toggle-wrapper">
+        <button id="theme-toggle" class="glass-btn" style="width: auto; padding: 10px 15px;"><i class="fa-solid fa-moon"></i></button>
+    </div>
+
+    <div class="auth-wrapper">
+        <div class="auth-box glass fade-in">
+            <div class="auth-logo">
+                <i class="fa-solid fa-store"></i>
+                <h2>JualBeli.app</h2>
+            </div>
+            <h3>Selamat Datang Kembali!</h3>
+            <p>Silakan masuk ke akun Anda untuk melanjutkan.</p>
+
+            <form id="form-form-login">
+                <div class="form-group">
+                    <label><i class="fa-solid fa-envelope"></i> Alamat Email</label>
+                    <input type="email" id="login-email" class="glass-input" placeholder="contoh@email.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label><i class="fa-solid fa-lock"></i> Password</label>
+                    <input type="password" id="login-password" class="glass-input" placeholder="Masukkan password" required>
+                </div>
+                
+                <div class="forgot-password">
+                    <a href="#">Lupa Password?</a>
+                </div>
+                
+                <button type="submit" class="glass-btn primary" style="padding: 12px; font-size: 1.1rem; width: 100%;">Masuk</button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Belum punya akun? <a href="/portal/daftar">Daftar sekarang</a></p>
+                <a href="/beranda" class="back-home"><i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast-container"></div>
+    
+    <script src="/script.js"></script>
+</body>
+</html>

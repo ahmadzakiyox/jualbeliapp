@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keranjang Belanja | JualBeli.app</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <aside class="sidebar glass">
+        <div class="logo">
+            <h2><i class="fa-solid fa-store"></i> JualBeli</h2>
+        </div>
+        <nav>
+            <a href="/beranda"><i class="fa-solid fa-house"></i> Beranda</a>
+            <a href="#"><i class="fa-solid fa-bolt"></i> Flash Sale</a>
+            <a href="#"><i class="fa-solid fa-list"></i> Kategori</a>
+            <a href="/akun/dasbor" id="menu-jualan"><i class="fa-solid fa-store"></i> Toko Saya</a>
+        </nav>
+        <div class="bottom-actions">
+            <button id="theme-toggle" class="glass-btn"><i class="fa-solid fa-moon"></i> Tema</button>
+        </div>
+    </aside>
+
+    <main class="content">
+        
+        <header class="top-header glass" style="position: relative; z-index: 9999;">
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Cari pesanan...">
+                <button class="search-btn">Cari</button>
+            </div>
+            <div class="header-actions">
+                <a href="#" class="icon-btn"><i class="fa-solid fa-bell"></i></a>
+                <a href="/transaksi/keranjang" class="icon-btn" style="color: var(--accent-color);"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="/akun/dasbor" class="user-profile" style="text-decoration: none; color: inherit;">
+                    <img src="https://ui-avatars.com/api/?name=Guest&background=4facfe&color=fff" alt="User" class="avatar">
+                    <span id="user-name">Guest</span>
+                </a>
+            </div>
+        </header>
+
+        <h1 style="margin-bottom: 20px;">Keranjang Belanja</h1>
+
+        <section class="cart-container">
+            <div class="cart-items fade-in">
+                
+                <div class="cart-item glass">
+                    <div class="item-img"><i class="fa-solid fa-headphones fa-2x"></i></div>
+                    <div class="item-details">
+                        <h3>Headset Wireless</h3>
+                        <p class="price">Rp 1.200.000</p>
+                    </div>
+                    <div class="item-quantity">
+                        <button class="qty-btn"><i class="fa-solid fa-minus"></i></button>
+                        <input type="number" value="1" readonly>
+                        <button class="qty-btn"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                    <button class="delete-btn" onclick="showToast('Barang dihapus dari keranjang!')"><i class="fa-solid fa-trash"></i></button>
+                </div>
+
+                <div class="cart-item glass">
+                    <div class="item-img"><i class="fa-solid fa-mobile-screen fa-2x"></i></div>
+                    <div class="item-details">
+                        <h3>Smartphone Ultra</h3>
+                        <p class="price">Rp 8.500.000</p>
+                    </div>
+                    <div class="item-quantity">
+                        <button class="qty-btn"><i class="fa-solid fa-minus"></i></button>
+                        <input type="number" value="1" readonly>
+                        <button class="qty-btn"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                    <button class="delete-btn" onclick="showToast('Barang dihapus dari keranjang!')"><i class="fa-solid fa-trash"></i></button>
+                </div>
+
+            </div>
+
+            <div class="cart-summary glass fade-in" style="animation-delay: 0.2s;">
+                <h3>Ringkasan Belanja</h3>
+                <div class="summary-row" style="margin-top: 20px;">
+                    <span>Total Harga (2 barang)</span>
+                    <span>Rp 9.700.000</span>
+                </div>
+                <div class="summary-row">
+                    <span>Diskon</span>
+                    <span style="color: #10b981;">- Rp 200.000</span>
+                </div>
+                <hr style="border-color: var(--glass-border); margin: 15px 0;">
+                <div class="summary-row total">
+                    <span>Total Tagihan</span>
+                    <span>Rp 9.500.000</span>
+                </div>
+                <button class="glass-btn primary" style="margin-top: 20px;" onclick="prosesCheckout()">Checkout Sekarang</button>
+            </div>
+        </section>
+
+        <footer class="site-footer glass fade-in" style="animation-delay: 0.4s;">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>JualBeli.app</h3>
+                    <p>Platform multi-vendor terpercaya untuk segala kebutuhan digital dan fisik Anda.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Bantuan</h3>
+                    <a href="#">Pusat Bantuan</a>
+                    <a href="#">Cara Berjualan</a>
+                    <a href="#">Kebijakan Privasi</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Ikuti Kami</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 JualBeli.app. All rights reserved.</p>
+            </div>
+        </footer>
+
+    </main>
+
+    <nav class="mobile-nav glass">
+        <a href="/beranda"><i class="fa-solid fa-house"></i></a>
+        <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <a href="/transaksi/keranjang" class="active"><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="/akun/dasbor"><i class="fa-solid fa-user"></i></a>
+    </nav>
+
+    <div id="toast-container"></div>
+
+    <script src="/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verifikasi Keamanan | JualBeli.app</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .otp-input-group { display: flex; gap: 10px; justify-content: center; margin: 30px 0; }
+        .otp-digit { width: 45px; height: 55px; text-align: center; font-size: 1.8rem; font-weight: bold; padding: 0; border-radius: 8px; border: 2px solid var(--glass-border); background: rgba(255, 255, 255, 0.1); color: inherit; transition: all 0.3s ease; }
+        .otp-digit:focus { border-color: var(--accent-color); outline: none; box-shadow: 0 0 10px rgba(79, 172, 254, 0.3); transform: translateY(-2px); }
+        .dark-mode .otp-digit { background: rgba(0, 0, 0, 0.2); }
+    </style>
+</head>
+<body class="auth-page">
+    
+    <div class="theme-toggle-wrapper">
+        <button id="theme-toggle" class="glass-btn" style="width: auto; padding: 10px 15px;"><i class="fa-solid fa-moon"></i></button>
+    </div>
+
+    <div class="auth-wrapper" style="max-width: 450px;">
+        <div class="auth-box glass fade-in" style="text-align: center;">
+            <div class="auth-logo" style="margin-bottom: 10px;">
+                <i class="fa-solid fa-shield-halved" style="color: #10b981; font-size: 3rem;"></i>
+                <h2 style="margin-top: 15px;">Verifikasi Keamanan</h2>
+            </div>
+            
+            <p style="opacity: 0.8; font-size: 0.95rem;">Kami telah mengirimkan 6 digit kode keamanan ke email <br><b id="display-email" style="color: var(--accent-color);"></b></p>
+
+            <form id="form-verify">
+                <div class="otp-input-group">
+                    <input type="text" class="otp-digit" maxlength="1" pattern="[0-9]*" inputmode="numeric" required autofocus>
+                    <input type="text" class="otp-digit" maxlength="1" pattern="[0-9]*" inputmode="numeric" required>
+                    <input type="text" class="otp-digit" maxlength="1" pattern="[0-9]*" inputmode="numeric" required>
+                    <input type="text" class="otp-digit" maxlength="1" pattern="[0-9]*" inputmode="numeric" required>
+                    <input type="text" class="otp-digit" maxlength="1" pattern="[0-9]*" inputmode="numeric" required>
+                    <input type="text" class="otp-digit" maxlength="1" pattern="[0-9]*" inputmode="numeric" required>
+                </div>
+                
+                <button type="submit" class="glass-btn primary" style="padding: 14px; font-size: 1.1rem; width: 100%; letter-spacing: 1px;">Verifikasi Sekarang</button>
+            </form>
+
+            <div class="auth-footer" style="margin-top: 25px;">
+                <p>Belum menerima email? <a href="#" onclick="showToast('⏳ Meminta kode baru... (Fitur segera hadir)')">Kirim Ulang</a></p>
+                <a href="/portal/daftar" class="back-home"><i class=\"fa-solid fa-arrow-left\"></i> Kembali Daftar</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast-container"></div>
+    <script src="/script.js"></script>
+</body>
+</html>

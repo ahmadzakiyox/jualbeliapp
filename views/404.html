@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Halaman Tidak Ditemukan | JualBeli.app</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .error-container { text-align: center; padding: 40px 20px; }
+        .error-code { 
+            font-size: 7rem; 
+            font-weight: 900; 
+            color: var(--accent-color); 
+            margin: 0; 
+            line-height: 1;
+            text-shadow: 0 10px 20px rgba(79, 172, 254, 0.3); 
+        }
+        .error-icon { font-size: 4.5rem; color: #94a3b8; margin-bottom: 15px; animation: float 3s ease-in-out infinite; }
+        .error-title { font-size: 1.8rem; margin: 15px 0 10px; }
+        .error-desc { opacity: 0.7; margin-bottom: 30px; font-size: 1rem; line-height: 1.6; }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="auth-page">
+    
+    <div class="theme-toggle-wrapper">
+        <button id="theme-toggle" class="glass-btn" style="width: auto; padding: 10px 15px;"><i class="fa-solid fa-moon"></i></button>
+    </div>
+
+    <div class="auth-wrapper" style="max-width: 550px;">
+        <div class="auth-box glass fade-in error-container">
+            <div class="error-icon">
+                <i class="fa-solid fa-satellite-dish"></i>
+            </div>
+            
+            <h1 class="error-code">404</h1>
+            <h2 class="error-title">Oops! Kehilangan Sinyal</h2>
+            <p class="error-desc">Halaman yang Anda cari mungkin telah dihapus, pindah URL, atau memang tidak pernah ada di server kami.</p>
+            
+            <a href="/beranda" class="glass-btn primary" style="display: inline-block; padding: 12px 30px; text-decoration: none; width: auto; font-size: 1.1rem; border-radius: 30px;">
+                <i class="fa-solid fa-house" style="margin-right: 8px;"></i> Kembali ke Beranda
+            </a>
+        </div>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>

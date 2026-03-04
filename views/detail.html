@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Produk | JualBeli.app</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <aside class="sidebar glass">
+        <div class="logo">
+            <h2><i class="fa-solid fa-store"></i> JualBeli</h2>
+        </div>
+        <nav>
+            <a href="/beranda"><i class="fa-solid fa-house"></i> Beranda</a>
+            <a href="#"><i class="fa-solid fa-bolt"></i> Flash Sale</a>
+            <a href="#" class="active"><i class="fa-solid fa-list"></i> Kategori</a>
+            <a href="/akun/dasbor" id="menu-jualan"><i class="fa-solid fa-store"></i> Toko Saya</a>
+        </nav>
+        <div class="bottom-actions">
+            <button id="theme-toggle" class="glass-btn"><i class="fa-solid fa-moon"></i> Tema</button>
+        </div>
+    </aside>
+
+    <main class="content">
+        
+        <header class="top-header glass" style="position: relative; z-index: 9999;">
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Cari produk lain...">
+                <button class="search-btn">Cari</button>
+            </div>
+            <div class="header-actions">
+                <a href="#" class="icon-btn"><i class="fa-solid fa-bell"></i></a>
+                <a href="/transaksi/keranjang" class="icon-btn"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="/akun/dasbor" class="user-profile" style="text-decoration: none; color: inherit;">
+                    <img src="https://ui-avatars.com/api/?name=Guest&background=4facfe&color=fff" alt="User" class="avatar">
+                    <span id="user-name">Guest</span>
+                </a>
+            </div>
+        </header>
+
+        <div class="page-header">
+            <a href="/beranda" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Kembali</a>
+        </div>
+
+        <section class="detail-container">
+            <div class="detail-image glass fade-in">
+                <i class="fa-solid fa-laptop fa-8x" style="color: var(--accent-color);"></i>
+            </div>
+
+            <div class="detail-info glass fade-in" style="animation-delay: 0.2s;">
+                <div class="seller-badge"><i class="fa-solid fa-check-circle"></i> Official Store</div>
+                <h1 class="detail-title">Laptop Pro 2026 Edisi Spesial</h1>
+                
+                <div class="detail-meta">
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.9</span>
+                    <span class="sold">1.2rb Terjual</span>
+                    <span class="stock">Stok: 45</span>
+                </div>
+                
+                <h2 class="detail-price">Rp 15.000.000</h2>
+                
+                <div class="detail-description">
+                    <h3>Deskripsi Produk</h3>
+                    <p>Laptop generasi terbaru dengan prosesor super cepat, layar OLED 4K, dan baterai tahan 24 jam. Cocok untuk produktivitas tingkat tinggi dan gaming berat. Garansi resmi 2 tahun.</p>
+                </div>
+
+                <div class="seller-card glass">
+                    <i class="fa-solid fa-store fa-2x" style="color: #8b5cf6;"></i>
+                    <div>
+                        <h4>Jagoan Komputer</h4>
+                        <p>Jakarta Selatan | Aktif 5 menit lalu</p>
+                    </div>
+                    <button class="glass-btn" style="padding: 8px 15px; width: auto;">Kunjungi</button>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="glass-btn"><i class="fa-solid fa-message"></i> Chat</button>
+                    <button class="glass-btn primary" onclick="showToast('<b>Laptop Pro 2026</b> masuk keranjang!')">
+                        <i class="fa-solid fa-cart-plus"></i> Masukkan Keranjang
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <footer class="site-footer glass fade-in" style="animation-delay: 0.4s;">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>JualBeli.app</h3>
+                    <p>Platform multi-vendor terpercaya untuk segala kebutuhan digital dan fisik Anda.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Bantuan</h3>
+                    <a href="#">Pusat Bantuan</a>
+                    <a href="#">Cara Berjualan</a>
+                    <a href="#">Kebijakan Privasi</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Ikuti Kami</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 JualBeli.app. All rights reserved.</p>
+            </div>
+        </footer>
+
+    </main>
+
+    <nav class="mobile-nav glass">
+        <a href="/beranda"><i class="fa-solid fa-house"></i></a>
+        <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <a href="/transaksi/keranjang"><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="/akun/dasbor"><i class="fa-solid fa-user"></i></a>
+    </nav>
+
+    <div id="toast-container"></div>
+
+    <script src="/script.js"></script>
+</body>
+</html>

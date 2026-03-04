@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daftar | JualBeli.app</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body class="auth-page">
+    <div class="theme-toggle-wrapper">
+      <button
+        id="theme-toggle"
+        class="glass-btn"
+        style="width: auto; padding: 10px 15px"
+      >
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </div>
+
+    <div class="auth-wrapper" style="max-width: 500px">
+      <div class="auth-box glass fade-in">
+        <div class="auth-logo">
+          <i class="fa-solid fa-user-plus"></i>
+          <h2>Buat Akun Baru</h2>
+        </div>
+        <p>Bergabunglah dengan ribuan penjual dan pembeli lainnya.</p>
+
+        <form id="form-register">
+          <div class="form-group">
+            <label><i class="fa-solid fa-user"></i> Nama Lengkap</label>
+            <input
+              type="text"
+              id="reg-nama"
+              class="glass-input"
+              placeholder="Budi Santoso"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label><i class="fa-solid fa-envelope"></i> Alamat Email</label>
+            <input
+              type="email"
+              id="reg-email"
+              class="glass-input"
+              placeholder="contoh@email.com"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label
+              ><i class="fa-solid fa-user-tag"></i> Mendaftar Sebagai</label
+            >
+            <select id="reg-role" class="glass-input" required>
+              <option value="user">Pembeli (Hanya bisa berbelanja)</option>
+              <option value="member">
+                Penjual (Bisa buka toko & berjualan)
+              </option>
+            </select>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px">
+            <div class="form-group">
+              <label><i class="fa-solid fa-lock"></i> Password</label>
+              <input
+                type="password"
+                id="reg-password"
+                class="glass-input"
+                placeholder="Minimal 8 karakter"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label
+                ><i class="fa-solid fa-check-double"></i> Konfirmasi
+                Password</label
+              >
+              <input
+                type="password"
+                id="reg-confirm"
+                class="glass-input"
+                placeholder="Ulangi password"
+                required
+              />
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="glass-btn primary"
+            style="padding: 12px; font-size: 1.1rem; margin-top: 10px"
+          >
+            Daftar Sekarang
+          </button>
+        </form>
+
+        <div class="auth-footer">
+          <p>Sudah punya akun? <a href="/portal/masuk">Masuk di sini</a></p>
+          <a href="/beranda" class="back-home"
+            ><i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div id="toast-container"></div>
+    <script src="/script.js"></script>
+  </body>
+</html>

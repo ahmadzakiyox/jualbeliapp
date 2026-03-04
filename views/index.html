@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JualBeli.app | E-Commerce Digital Terpercaya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <aside class="sidebar glass">
+        <div class="logo">
+            <h2><i class="fa-solid fa-store"></i> JualBeli</h2>
+        </div>
+        <nav>
+            <a href="/beranda" class="active"><i class="fa-solid fa-house"></i> Beranda</a>
+            <a href="#"><i class="fa-solid fa-bolt"></i> Flash Sale</a>
+            <a href="#"><i class="fa-solid fa-list"></i> Kategori</a>
+            <a href="/akun/dasbor" id="menu-jualan" style="display: none;"><i class="fa-solid fa-store"></i> Toko Saya</a>
+        </nav>
+        <div class="bottom-actions">
+            <button id="theme-toggle" class="glass-btn"><i class="fa-solid fa-moon"></i> Tema</button>
+        </div>
+    </aside>
+
+    <main class="content">
+        
+        <header class="top-header glass" style="position: relative; z-index: 9999;">
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Cari Netflix, Spotify, Canva...">
+                <button class="search-btn">Cari</button>
+            </div>
+            <div class="header-actions">
+                <a href="#" class="icon-btn"><i class="fa-solid fa-bell"></i></a>
+                <a href="/transaksi/keranjang" class="icon-btn"><i class="fa-solid fa-cart-shopping"></i></a>
+                
+                <div class="profile-dropdown-container" style="position: relative; display: inline-block;">
+                    <button id="profile-dropdown-btn" class="glass-btn" style="border: none; background: transparent; display: flex; align-items: center; gap: 10px; cursor: pointer; padding: 5px 10px;">
+                        <img src="https://ui-avatars.com/api/?name=Guest&background=4facfe&color=fff" alt="User" id="user-avatar" class="avatar" style="width: 35px; height: 35px; border-radius: 50%;">
+                        <span id="user-name">Memuat...</span>
+                        <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem; opacity: 0.7;"></i>
+                    </button>
+                    
+                    <div id="profile-dropdown-menu" class="glass fade-in" style="display: none; position: absolute; right: 0; top: 120%; min-width: 220px; border-radius: 12px; padding: 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); z-index: 100;">
+                        </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero-banner glass" style="margin-bottom: 25px;">
+            <div class="hero-content">
+                <span class="badge">🚀 Platform Produk Digital Premium</span>
+                <h1>Satu Tempat untuk Semua Akun Premium-mu</h1>
+                <p>Mulai dari aplikasi streaming, lisensi software, hingga akun game dengan harga termurah. Pengiriman instan otomatis 24/7 dan bergaransi!</p>
+                <button class="glass-btn primary hero-btn">Jelajahi Sekarang <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+            <div class="hero-image">
+                <i class="fa-solid fa-cloud-arrow-down fa-5x"></i>
+            </div>
+        </section>
+
+        <div class="trust-badges fade-in">
+            <div class="badge-item"><i class="fa-solid fa-bolt"></i> Pengiriman Instan 1 Detik</div>
+            <div class="badge-item"><i class="fa-solid fa-shield-halved"></i> 100% Legal & Bergaransi</div>
+            <div class="badge-item"><i class="fa-solid fa-headset"></i> Support Anti-Nganggur</div>
+            <div class="badge-item"><i class="fa-solid fa-lock"></i> Escrow Aman</div>
+        </div>
+
+        <div class="section-title" style="margin-bottom: 15px;">
+            <h2>Kategori Digital</h2>
+        </div>
+        <div class="category-scroll fade-in">
+            <div class="category-item"><i class="fa-solid fa-film"></i><span>Streaming</span></div>
+            <div class="category-item"><i class="fa-solid fa-music"></i><span>Musik</span></div>
+            <div class="category-item"><i class="fa-solid fa-gamepad"></i><span>Game</span></div>
+            <div class="category-item"><i class="fa-solid fa-code"></i><span>Software</span></div>
+            <div class="category-item"><i class="fa-solid fa-palette"></i><span>Desain</span></div>
+            <div class="category-item"><i class="fa-solid fa-network-wired"></i><span>VPN</span></div>
+            <div class="category-item"><i class="fa-solid fa-graduation-cap"></i><span>Edukasi</span></div>
+        </div>
+
+        <div class="flash-sale-banner fade-in">
+            <div>
+                <h2 style="margin: 0 0 5px 0; font-size: 2rem;"><i class="fa-solid fa-bolt"></i> Kejar Diskon Super</h2>
+                <p style="margin: 0; opacity: 0.9;">Berakhir dalam beberapa jam lagi! Jangan sampai kehabisan.</p>
+            </div>
+            <div class="flash-timer">
+                <div class="timer-box">04</div><span style="font-size: 1.5rem; font-weight: bold;">:</span>
+                <div class="timer-box">28</div><span style="font-size: 1.5rem; font-weight: bold;">:</span>
+                <div class="timer-box">15</div>
+            </div>
+        </div>
+
+        <div class="section-title">
+            <h2>Rekomendasi Terkini</h2>
+            <a href="#">Lihat Semua <i class="fa-solid fa-chevron-right"></i></a>
+        </div>
+
+        <section id="katalog-produk" class="product-grid">
+            <div class="glass skeleton-card"></div>
+            <div class="glass skeleton-card"></div>
+            <div class="glass skeleton-card"></div>
+            <div class="glass skeleton-card"></div>
+        </section>
+
+        <footer class="site-footer glass fade-in" style="margin-top: 60px;">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>JualBeli.app</h3>
+                    <p>Platform E-Commerce generasi baru dengan dukungan produk digital secara seamless.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Pintasan</h3>
+                    <a href="#">Tentang Kami</a>
+                    <a href="#">Cara Berjualan</a>
+                    <a href="#">Pusat Resolusi</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Hubungi Kami</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 JualBeli.app - Dibangun untuk masa depan.</p>
+            </div>
+        </footer>
+
+    </main>
+
+    <div id="quick-view-modal" class="modal-overlay">
+        <div class="modal-content glass">
+            <span class="close-modal"><i class="fa-solid fa-xmark"></i></span>
+            <div class="modal-body" id="modal-details">
+                <div style="text-align: center; padding: 40px;">
+                    <i class="fa-solid fa-spinner fa-spin fa-3x" style="color: var(--accent-color);"></i>
+                    <p style="margin-top: 15px;">Memuat detail produk...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="mobile-nav glass">
+        <a href="/beranda" class="active"><i class="fa-solid fa-house"></i></a>
+        <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <a href="/transaksi/keranjang"><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="/akun/dasbor"><i class="fa-solid fa-user"></i></a>
+    </nav>
+
+    <div id="toast-container"></div>
+    <script src="/script.js"></script>
+</body>
+</html>
