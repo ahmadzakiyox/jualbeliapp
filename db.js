@@ -1,4 +1,4 @@
-require('dotenv').config();
+
 const mongoose = require('mongoose');
 
 // Koneksi ke MongoDB menggunakan URI di .env
