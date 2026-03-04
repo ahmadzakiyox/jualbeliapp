@@ -205,13 +205,16 @@ app.put('/api/v1/user/profil', verifikasiToken, async (req, res) => {
     }
 });
 
-// GET: Ambil Semua Produk untuk Ditampilkan di Beranda
-app.get('/api/v1/produk', async (req, res) => {
+app.get('/api/v1/produk/detail/:id', async (req, res) => {
+// GET: Ambil Detail SATU Produk Berdasarkan ID (Untuk halaman detail.html)
     try {
-        const daftarProduk = await Product.find().sort({ createdAt: -1 });
-        res.status(200).json({ success: true, data: daftarProduk });
+        // .populate() digunakan untuk menarik nama penjual langsung dari database User
+        const produk = await Product.findById(req.params.id).populate('penjualId', 'namaLengkap');
+        
+        if (!produk) return res.status(404).json({ success: false, message: 'Produk tidak ditemukan' });
+        res.status(200).json({ success: true, data: produk });
     } catch (error) {
-        res.status(500).json({ success: false, message: 'Gagal memuat produk.' });
+        res.status(500).json({ success: false, message: 'Gagal memuat detail produk.' });
     }
 });
 
