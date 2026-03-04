@@ -628,6 +628,58 @@ window.openInputStok = (id) => {
     document.getElementById('modal-tambah-stok').style.display = 'flex';
 };
 
+// ==========================================
+    // 8. LOGIKA HALAMAN DETAIL PRODUK (DINAMIS)
+    // ==========================================
+    if (window.location.pathname === '/katalog/item') {
+        async function muatHalamanDetail() {
+            // Tarik ID dari URL web (contoh: ?id=65a123bc...)
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+
+            if (!productId) {
+                showToast('❌ Produk tidak valid!');
+                setTimeout(() => window.location.href = '/beranda', 2000);
+                return;
+            }
+
+            try {
+                // Panggil API Backend
+                const response = await fetch(`/api/v1/produk/detail/${productId}`);
+                const result = await response.json();
+
+                if (result.success) {
+                    const p = result.data;
+                    const hargaRp = new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR", minimumFractionDigits: 0 }).format(p.harga);
+
+                    // Hilangkan Loading, Munculkan Konten
+                    document.getElementById('loading-detail').style.display = 'none';
+                    document.getElementById('content-detail').style.display = 'flex';
+
+                    // Suntikkan data dari MongoDB ke HTML
+                    document.getElementById('detail-image').innerHTML = `<img src="${p.gambarUrl}" style="width: 100%; height: 100%; object-fit: cover;">`;
+                    document.getElementById('detail-kategori').innerText = p.kategori;
+                    document.getElementById('detail-title').innerText = p.namaProduk;
+                    document.getElementById('detail-price').innerText = hargaRp;
+                    document.getElementById('detail-stock').innerText = `Tersedia: ${p.stok} Akun`;
+                    document.getElementById('detail-desc').innerText = p.deskripsi;
+                    
+                    // Cek apakah data penjual terhubung
+                    const namaPenjual = p.penjualId ? p.penjualId.namaLengkap : 'Penjual Anonim';
+                    document.getElementById('detail-seller').innerText = namaPenjual;
+
+                } else {
+                    showToast('❌ Produk tidak ditemukan!');
+                }
+            } catch (error) {
+                showToast('❌ Gagal terhubung ke server database.');
+            }
+        }
+        
+        // Eksekusi fungsi saat halaman dimuat
+        muatHalamanDetail();
+    }
+
 });
 
 window.hapusProduk = async function(id) {
