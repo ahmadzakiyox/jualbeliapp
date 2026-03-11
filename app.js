@@ -18,11 +18,16 @@ app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'views', 'index.htm
 app.get('/beranda', (req, res) => res.sendFile(path.join(__dirname, 'views', 'index.html')));
 app.get('/katalog/item', (req, res) => res.sendFile(path.join(__dirname, 'views', 'detail.html')));
 
-
 app.use('/api/products', productRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/payments', paymentRoutes);
+
+
+// Fallback UI route: semua path non-API diarahkan ke beranda SPA-like
+app.get(/^\/(?!api\/).*/, (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'index.html'));
+});
 
 app.use(notFoundHandler);
 app.use(errorHandler);
